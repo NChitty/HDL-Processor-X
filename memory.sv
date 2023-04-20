@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 04/14/2023 03:09:45 PM
-// Design Name: 
-// Module Name: memory
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 module memory(
     input [13:0] addr,
@@ -41,7 +22,7 @@ always @(addr, we, data_in) begin
         mem[addr - 1] <= data_in[7:0];
     end
     else begin
-        data_out <= mem[addr] + mem[addr-1];
+        data_out <= (mem[addr] << 8) + mem[addr-1];
     end
 end
 
