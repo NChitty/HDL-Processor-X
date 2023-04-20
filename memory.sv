@@ -28,6 +28,13 @@ module memory(
 
 reg [7:0] mem[0:16393];
 
+// for simulations
+integer i;
+initial begin
+    for (i = 0; i <=16393; i=i+1)
+        mem[i] = 8'b0;
+end
+
 always @(addr or we or data_in) begin
     if(we) begin
         mem[addr] <= data_in[15:8];
