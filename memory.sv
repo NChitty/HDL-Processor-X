@@ -35,7 +35,7 @@ initial begin
         mem[i] = 8'b0;
 end
 
-always @(addr or we or data_in) begin
+always @(addr, we, data_in) begin
     if(we) begin
         mem[addr] <= data_in[15:8];
         mem[addr - 1] <= data_in[7:0];
