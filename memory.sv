@@ -28,7 +28,7 @@ module memory(
 
 reg [7:0] mem[0:16393];
 
-always @(addr or we) begin
+always @(addr or we or data_in) begin
     if(we) begin
         mem[addr] <= data_in[15:8];
         mem[addr - 1] <= data_in[7:0];
