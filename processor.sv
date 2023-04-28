@@ -60,23 +60,6 @@ always @(posedge clk) begin
             alu.b <= reg_file.read_data_2;
             mem.address <= alu_result;
         end
-        // Memory access
-        if (instruction[31:26] == 32'b100000) begin
-        mem.write_enable <= 1;
-        mem.data_in <= reg_file.read_data_2;
-        end else begin
-        mem.write_enable <= 0;
-        end
-        // Writeback
-        if (instruction[31:26] == 32'b101011) begin
-        reg_file.write_enable <= 1;
-        reg_file.write_data <= mem_data;
-        end else if (instruction[31:26] == 32'b101010) begin
-        reg_file.write_enable <= 1;
-        reg_file.write_data <= alu_result;
-        end else begin
-        reg_file.write_enable <= 0;
-        end
     end
   end
 end
