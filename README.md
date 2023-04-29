@@ -3,7 +3,7 @@ ISA X is a 16 bit instruction set architecture written in SystemVerilog.
 SystemVerilog was chosen due to a slightly enhanced feature set over regular HDL.
 
 # Design
-Use this sheet to see the design and translation of assembly to machine code.
+[Use this sheet to see the design and translation of assembly to machine code.](https://github.com/NChitty/HDL-Processor-X/blob/main/Opcodes.pdf)
 
 LW takes the value at memory address Rs and stores into register Rd.
 SW takes stores the value of Rs into the memory address of Rd. Branch is left-shifted one position.
