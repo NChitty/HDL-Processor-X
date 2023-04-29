@@ -3,23 +3,7 @@ ISA X is a 16 bit instruction set architecture written in SystemVerilog.
 SystemVerilog was chosen due to a slightly enhanced feature set over regular HDL.
 
 # Design
-The following table contains the opcodes for the the design of the ISA.
-| Opcode | 15 | 14 | 13 | 12 | 11 | 10 | 9  | 8  | 7  | 6  | 5  | 4  | 3  | 2  | 1  | 0  |
-|--------|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-| NOP    | 0  | 0  | 0  | 0  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
-| ADD    | 0  | 0  | 0  | 1  | Rd | X  | X  | X  | X  | Rs1| X  | X  | Rs2| X  | X  | X  |
-| SUB    | 0  | 0  | 1  | 0  | Rd | X  | X  | X  | X  | Rs1| X  | X  | Rs2| X  | X  | X  |
-| MUL    | 0  | 0  | 1  | 1  | Rd | X  | X  | X  | X  | Rs1| X  | X  | Rs2| X  | X  | X  |
-| DIV    | 0  | 1  | 0  | 0  | Rd | X  | X  | X  | X  | Rs1| X  | X  | Rs2| X  | X  | X  |
-| AND    | 0  | 1  | 0  | 1  | Rd | X  | X  | X  | X  | Rs1| X  | X  | Rs2| X  | X  | X  |
-| OR     | 0  | 1  | 1  | 0  | Rd | X  | X  | X  | X  | Rs1| X  | X  | Rs2| X  | X  | X  |
-| NOT    | 0  | 1  | 1  | 1  | Rd | X  | X  | X  | X  | Rs1| X  | X  | X  | X  | X  | X  |
-| MV     | 1  | 0  | 0  | 0  | Rd | Immediate[8:0]                                    |
-| LW     | 1  | 0  | 0  | 1  | Rd | X  | X  | X  | Rs | X  | X  | X  | X  | X  | X  | X  |
-| SW     | 1  | 0  | 1  | 0  | Rd | X  | X  | X  | Rs | X  | X  | X  | X  | X  | X  | X  |
-| BZ     | 1  | 0  | 1  | 1  | Imm[8:3]         | Rs | Imm[2:0]        |
-| BNZ    | 1  | 1  | 0  | 0  | Imm[8:3]         | Rs | Imm[2:0]        |
-| JMP    | 1  | 1  | 0  | 1  | Imm[11:0]                                |
+Use this sheet to see the design and translation of assembly to machine code.
 
 LW takes the value at memory address Rs and stores into register Rd.
 SW takes stores the value of Rs into the memory address of Rd. Branch is left-shifted one position.
